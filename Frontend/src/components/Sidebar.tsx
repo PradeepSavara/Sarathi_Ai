@@ -21,7 +21,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed: boolean; o
   return (
     <motion.aside
       animate={{ width: collapsed ? 88 : 280 }}
-      className="hidden border-r border-slate-200/80 bg-white/75 p-4 backdrop-blur-xl transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950/60 lg:block"
+      className="hidden h-full shrink-0 border-r border-slate-200/80 bg-white/75 p-4 backdrop-blur-xl transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950/60 lg:flex lg:flex-col"
     >
       <div className="flex items-center justify-between">
         {!collapsed && <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">Workspace</span>}

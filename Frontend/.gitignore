@@ -44,3 +44,10 @@ coverage/
 
 # Build cache
 .turbo/
+
+
+
+
+*.md
+!README.md
+!**/README.md
