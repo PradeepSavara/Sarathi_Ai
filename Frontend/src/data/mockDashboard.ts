@@ -1,0 +1,101 @@
+import { AlertTriangle, Bug, CheckCircle2, GitMerge, HeartPulse, Rocket, ShieldAlert, TrendingUp } from "lucide-react";
+import type { DashboardData } from "../types";
+
+export const mockDashboard: DashboardData = {
+  health: {
+    score: 86,
+    status: "Healthy",
+    currentSprint: "Sprint 24",
+    sprintDaysRemaining: 6,
+    project: "RetailX-Commerce",
+  },
+  sprint: {
+    completedStories: 46,
+    remainingStories: 14,
+    completion: 77,
+    velocity: 42,
+  },
+  kpis: [
+    { title: "Project Health", value: "86%", trend: "+4.2%", trendDirection: "up", progress: 86, icon: HeartPulse },
+    { title: "Sprint Progress", value: "77%", trend: "+9 stories", trendDirection: "up", progress: 77, icon: CheckCircle2 },
+    { title: "Productivity", value: "91%", trend: "+15%", trendDirection: "up", progress: 91, icon: TrendingUp },
+    { title: "Open Bugs", value: "18", trend: "-6", trendDirection: "down", progress: 42, icon: Bug },
+    { title: "Pipeline Success", value: "94%", trend: "+2.5%", trendDirection: "up", progress: 94, icon: Rocket },
+    { title: "Open Risks", value: "7", trend: "2 critical", trendDirection: "flat", progress: 35, icon: ShieldAlert },
+    { title: "Merged Pull Requests", value: "38", trend: "+11", trendDirection: "up", progress: 82, icon: GitMerge },
+    { title: "Team Velocity", value: "42 SP", trend: "+8 SP", trendDirection: "up", progress: 84, icon: AlertTriangle },
+  ],
+  burndown: [
+    { name: "D1", ideal: 60, actual: 60 },
+    { name: "D3", ideal: 52, actual: 55 },
+    { name: "D5", ideal: 44, actual: 47 },
+    { name: "D7", ideal: 36, actual: 38 },
+    { name: "D9", ideal: 28, actual: 29 },
+    { name: "D11", ideal: 20, actual: 17 },
+    { name: "D13", ideal: 12, actual: 14 },
+  ],
+  productivity: [
+    { name: "Completed Tasks", value: 146 },
+    { name: "Pending Tasks", value: 36 },
+    { name: "Delayed Tasks", value: 9 },
+    { name: "Avg Story Points", value: 8.4 },
+  ],
+  quality: [
+    { name: "Open Bugs", value: 18, color: "#EF4444" },
+    { name: "Closed Bugs", value: 64, color: "#22C55E" },
+    { name: "Critical Bugs", value: 4, color: "#F59E0B" },
+    { name: "Regression Bugs", value: 7, color: "#3B82F6" },
+  ],
+  pipeline: {
+    latestBuild: "retailx-main-20260706.4",
+    buildDuration: "11m 42s",
+    successRate: "94%",
+    failedBuilds: 2,
+    deploymentStatus: "Production slot ready",
+  },
+  pullRequests: {
+    merged: 38,
+    open: 12,
+    reviewPending: 6,
+    averageReviewTime: "4.6h",
+  },
+  team: [
+    { name: "Sripriya", role: "Scrum Master", avatar: "SP", completedTasks: 28, velocity: 44, storyPoints: 72, assignedWork: 31, bugCount: 2, completion: 90 },
+    { name: "Priya", role: "Frontend", avatar: "PR", completedTasks: 24, velocity: 38, storyPoints: 64, assignedWork: 29, bugCount: 4, completion: 83 },
+    { name: "Arun", role: "Backend", avatar: "AR", completedTasks: 31, velocity: 46, storyPoints: 81, assignedWork: 34, bugCount: 3, completion: 91 },
+    { name: "Meera", role: "QA Lead", avatar: "ME", completedTasks: 22, velocity: 34, storyPoints: 52, assignedWork: 27, bugCount: 1, completion: 81 },
+  ],
+  risks: [
+    { id: "R-101", risk: "Authentication module has delayed test hardening", owner: "Meera", probability: "High", impact: "Critical", priority: "Critical", status: "In Progress", dueDate: "08-Jul-2026" },
+    { id: "R-102", risk: "Payment gateway API throttling in peak load", owner: "Arun", probability: "Medium", impact: "High", priority: "High", status: "Open", dueDate: "10-Jul-2026" },
+    { id: "R-103", risk: "Regression suite coverage below target", owner: "Priya", probability: "Medium", impact: "Medium", priority: "Medium", status: "Review", dueDate: "12-Jul-2026" },
+    { id: "R-104", risk: "Release notes awaiting PMO approval", owner: "Sripriya", probability: "Low", impact: "Low", priority: "Low", status: "Completed", dueDate: "06-Jul-2026" },
+  ],
+  actions: [
+    { id: "A-201", title: "Increase QA resources for authentication", owner: "Meera", dueDate: "08-Jul-2026", priority: "Critical", completed: false },
+    { id: "A-202", title: "Resolve payment API retry strategy", owner: "Arun", dueDate: "09-Jul-2026", priority: "High", completed: false },
+    { id: "A-203", title: "Close PMO weekly portfolio summary", owner: "Sripriya", dueDate: "06-Jul-2026", priority: "Medium", completed: true },
+    { id: "A-204", title: "Review open pull requests older than 24h", owner: "Priya", dueDate: "07-Jul-2026", priority: "Medium", completed: false },
+  ],
+  aiInsights: [
+    "Project Health is improving with a 4.2% uplift in the last sprint window.",
+    "Authentication module has the highest delivery risk due to late quality hardening.",
+    "Backend productivity increased 15% after pipeline stabilization.",
+    "Recommendation: increase QA resources and keep payment gateway work under daily executive watch.",
+  ],
+  executiveSummary: {
+    overallStatus: "On Track",
+    deliveryConfidence: "88%",
+    budgetStatus: "Within Plan",
+    riskStatus: "Managed with 2 critical watches",
+    sprintHealth: "Healthy",
+    recommendation: "Protect current sprint scope and add short-term QA capacity for authentication hardening.",
+  },
+  recentActivity: [
+    { id: "ACT-1", title: "Work Item Created", meta: "Checkout coupon validation story added", type: "work-item" },
+    { id: "ACT-2", title: "Bug Closed", meta: "Payment redirect defect resolved", type: "bug" },
+    { id: "ACT-3", title: "PR Merged", meta: "Retail cart pricing refactor merged", type: "pr" },
+    { id: "ACT-4", title: "Pipeline Succeeded", meta: "retailx-main-20260706.4 completed", type: "pipeline" },
+    { id: "ACT-5", title: "Sprint Completed", meta: "Sprint 23 closed at 93% commitment", type: "sprint" },
+  ],
+};
