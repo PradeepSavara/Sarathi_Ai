@@ -31,18 +31,9 @@ An intelligent AI-powered dashboard for monitoring delivery governance, KPIs, pr
 2. **Install dependencies**
    ```bash
    npm install
-   ```
+   ``
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   Update `.env.local` with your configuration:
-   ```
-   VITE_API_URL=http://localhost:3000/api
-   ```
-
-4. **Start development server**
+3. **Start development server**
    ```bash
    npm run dev
    ```
